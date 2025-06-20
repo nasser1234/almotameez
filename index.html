@@ -13,8 +13,9 @@
         body {
             margin: 0;
             font-family: 'Tahoma', sans-serif;
-            background:  #9c9c8c;
-            color: #252222;
+            background:  #fcfce5;
+            color: #000;
+            font-size: large;
             direction: rtl;
             scroll-behavior: smooth;
         }
@@ -33,15 +34,54 @@
         }
         header h1 {
             position: relative;
-            color: #205836;
+            color: #ffb13c;
             font-size: 2em;
             margin: 0 0 10px;
         }
         header p {
             font-size: 1.2em;
-            color: #b6afaf;
+            color: #fff;
             margin: 0;
             position: relative;
+        }
+        .floating-menu {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-30%);
+            background-color: #fff;
+            border-radius: 0 10px 10px 0;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            padding: 10px;
+            transition: left 0.3s;
+            z-index: 1000;
+        }
+
+        .floating-menu a {
+            display: block;
+            text-align: center;
+            margin: 10px 0;
+            font-size: 24px;
+            color: #0a5c1e;
+            text-decoration: none;
+        }
+
+        .toggle-btn {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translate(-100%, -50%);
+            background-color: #007bff;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 0 10px 10px 0;
+            cursor: pointer;
+            z-index: 1001;
+            transition: left 0.3s;
+        }
+
+        .hidden {
+            left: -150px;
         }
         nav ul {
             list-style: none;
@@ -53,7 +93,7 @@
             position: relative;
         }
         nav ul li a {
-            color: #205836;
+            color: #ffb13c;
             text-decoration: none;
             font-weight: bold;
         }
@@ -66,8 +106,8 @@
             margin-top: 15px;
         }
         .social a {
-            color: #205836;
-            font-size: 1.6em;
+            color: #ffb13c;
+            font-size: xx-large;
             text-decoration: none;
         }
         .content {
@@ -79,8 +119,13 @@
             margin-bottom: 50px;
         }
         .section h2 {
-            color: #205836;
+            color: hsl(39, 90%, 49%);
             margin-bottom: 15px;
+            text-align: center;
+        }
+        .section, h4{
+            text-align: center;
+            font-size: large;
         }
         .section ul {
             padding: 0;
@@ -89,6 +134,7 @@
         .section ul li {
             margin-bottom: 10px ;
         }
+        
         .testimonial, .faq {
             background-color: #dac3c3;
             padding: 20px;
@@ -99,7 +145,7 @@
             color: #f0c040;
         }
         .btn {
-            background-color: #205836;
+            background-color: #ddf0e5;
             color: #000;
             padding: 12px 25px;
             border-radius: 5px;
@@ -109,15 +155,13 @@
             font-weight: bold;
         }
         .footer-icons a {
-            color: #205836;
-            font-size: 1.60em;
+            color: #ffb13c;
+            font-size: x-large;
         }
         #topBtn {
             position: fixed;
-            bottom: 30px;
-            left: 20px;
-            background-color: #205836 ;
-            border:#251616;
+            bottom: 40px;
+            left: 0;
             cursor: pointer;
             font-size:x-large;
             display: none;
@@ -129,26 +173,25 @@
             border-radius: 10px;
             margin-top: 20px;
         }
-        image {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            object-fit: cover;
-            margin-bottom: 50px;
+        .gallery {
+            padding: 30px 20px;
+            text-align: center;
+            font-size: large;
         }
-        .image img {
+            .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+            .gallery-item img {
             width: 100%;
-            background-color: rgba(227, 255, 211, 0.377);
             height: 400px;
-            padding: 10px;
-            object-fit: cover;
-            border-radius: 5px;   
-           
+            border-radius: 10px;
         }
         form {
             width: 100%;
             display: flex;
             flex-direction: column;
-            margin-bottom: 50px;
             gap: 10px;
         }
         input, textarea {
@@ -159,8 +202,7 @@
             border:none;
         }
         input[type="submit"] {
-            background-color: #466e57;
-            margin-bottom: 50px;
+            background-color: #e3f0e9;
             color: #000;
             font-weight: bold;
             font-size: large;
@@ -172,27 +214,28 @@
             gap: 10px;
         }
         .testimonial {
-            background-color: #b9b3b38a;
+            background-color: #f0f0e69f;
             padding: 10px;
             border-radius: 5px;
-            font-size: 0.95em;
+            font-size: large;
         }
         .testimonial strong {
             display: block;
             margin-bottom: 10px;
-            color: #1e3122fb;
+            color: #295a33fb;
         }
         footer{
             width: 100%;
             background-color: #111;
-            color:#fff;
+            color:#fafafa;
             margin: 0;
             padding: 40px 5%;
             box-sizing: border-box;
             text-align: center;
         }
         footer h3{
-            color: #205836;
+            color: #ffb13c;
+            
             margin-bottom: 20px;
             font-size: 2em;
         }
@@ -202,7 +245,7 @@
             line-height: 1.8;
         }
         footer a{
-            color: #665e4a;
+            color: #8a8373;
             text-decoration: none;
             font-weight: bold;
         }
@@ -215,17 +258,25 @@
             font-size: 0.95em;
         }
         .footer-links a{
-            color: #aaa;
+            color: #ffb13c;
             text-decoration: none;
         }
         .footer-bottom{
             margin-top: 30px;
             font-size: 0.9em;
-            color: #aaa;
+            color: #c5c3bf;
         }
     </style>
 </head>
 <body>
+
+<div class="floating-menu" id="socialMenu">
+    <a href="https://wa.me/776844155" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://instagram.com/sn2.ake" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://facebook.com/sn2.ake" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://tiktok.com/@username" target="_blank"><i class="fab fa-tiktok"></i></a>
+</div>
+<div class="toggle-btn" id="toggleBtn">≡</div>
     <!-- رأس الصفحة -->
 <header>
         <h1>المتميز للدهانات</h1>
@@ -256,73 +307,116 @@
     <section id="services" class="section">
             <h2>خدماتنا</h2>
             <ul>
-                <h3><li>دهانات داخلية فاخرة للمنازل والفلل</li></h3>
-                <h3><li>دهانات خارجية مقاومة للحرارة والرطوبة</li></h3>
-                <h3><li>ديكورات جدارية فنية</li></h3>
-                <h3><li>ترميم وصيانة الأسطح</li></h3>
-                <h3><li>تشطيبات نهائية باحترافية عالية</li></h3>
-                <h3><li>استشارات اختيار الألوان المناسبة</li></h3>
+                <h4><li>دهانات داخلية فاخرة للمنازل والفلل</li></h4>
+                <h4><li>دهانات خارجية مقاومة للحرارة والرطوبة</li></h4>
+                <h4><li>ديكورات جدارية فنية</li></h4>
+                <h4><li>ترميم وصيانة الأسطح</li></h4>
+                <h4><li>تشطيبات نهائية باحترافية عالية</li></h4>
+                <h4><li>استشارات اختيار الألوان المناسبة</li></h4>
             </ul>
     </section>
-    <section id="gallery" class="section">
+    <section id="gallery" class="gallery">
         <h2>أعمالنا</h2>
-        <div class="image">
-            <img src="img (1).jpg" alt="دهان غرفة نوم">
-            <img src="img (2).jpg" alt="دهانات مجلس">
-            <img src="img (3).jpg" alt="تشطيب خارجي">
-            <img src="img (4).jpg" alt="تشطيب خارجي">
-            <img src="img (5).jpg" alt="تشطيب خارجي">
-            <img src="img (6).jpg" alt="تشطيب خارجي">
-            <img src="img (7).jpg" alt="تشطيب خارجي"> 
-            <img src="img (8).jpg" alt="تشطيب خارجي">
-            <img src="img (9).jpg" alt="تشطيب خارجي">
-            <img src="img (10).jpg" alt="تشطيب خارجي">
-            <img src="img (11).jpg" alt="تشطيب خارجي">
-            <img src="img (12).jpg" alt="تشطيب خارجي">
-            <img src="img (13).jpg" alt="تشطيب خارجي">
-            <img src="img (14).jpg" alt="تشطيب خارجي">
-            <img src="img (15).jpg" alt="تشطيب خارجي">
-            <img src="img (16).jpg" alt="تشطيب خارجي">
-            <img src="img (17).jpg" alt="تشطيب خارجي">
-            <img src="img (18).jpg" alt="تشطيب خارجي">
-            <img src="img (19).jpg" alt="تشطيب خارجي">
-            <img src="img (20).jpg" alt="تشطيب خارجي">
-            <img src="img (21).jpg" alt="تشطيب خارجي">
-            <img src="img (22).jpg" alt="تشطيب خارجي">
-            <img src="img (23).jpg" alt="تشطيب خارجي">
-            <img src="img (24).jpg" alt="تشطيب خارجي">
-            <img src="img (25).jpg" alt="تشطيب خارجي">
-            <img src="img (26).jpg" alt="تشطيب خارجي">
-            <img src="img (27).jpg" alt="تشطيب خارجي">
-            <img src="img (28).jpg" alt="دهان غرفة نوم">
-            <img src="img (29).jpg" alt="دهانات مجلس">
-            <img src="img (30).jpg" alt="تشطيب خارجي">
-            <img src="img (31).jpg" alt="تشطيب خارجي">
-            <img src="img (32).jpg" alt="تشطيب خارجي">
-            <img src="img (33).jpg" alt="تشطيب خارجي">
-            <img src="img (34).jpg" alt="تشطيب خارجي"> 
-            <img src="img (35).jpg" alt="تشطيب خارجي">
-            <img src="img (37).jpg" alt="تشطيب خارجي">
-            <img src="img (38).jpg" alt="تشطيب خارجي">
-            <img src="img (39).jpg" alt="تشطيب خارجي">
-            <img src="img (40).jpg" alt="تشطيب خارجي">
-            <img src="img (41).jpg" alt="تشطيب خارجي">
-            <img src="img (42).jpg" alt="تشطيب خارجي">
-            <img src="img (43).jpg" alt="تشطيب خارجي">
-            <img src="img (44).jpg" alt="تشطيب خارجي">
-            <img src="img (45).jpg" alt="تشطيب خارجي">
-            <img src="img (46).jpg" alt="تشطيب خارجي">
-            <img src="img (47).jpg" alt="تشطيب خارجي">
-            <img src="img1.jpg" alt="تشطيب خارجي">
-            <img src="img2.jpg" alt="تشطيب خارجي">
-            <img src="img3.jpg" alt="تشطيب خارجي">
-            <img src="img4.jpg" alt="تشطيب خارجي">
-            <img src="img5.jpg" alt="تشطيب خارجي">
-            <img src="img6.jpg" alt="تشطيب خارجي">
-            <img src="img7.jpg" alt="تشطيب خارجي">
-            <img src="img8.jpg" alt="تشطيب خارجي">
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="img1.jpg" alt="عمل 1">
+                <p>وصف العمل 1</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img2.jpg" alt="عمل 2">
+                <p>وصف العمل 2</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img3.jpg" alt="عمل 3">
+                <p>وصف العمل 3</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img4.jpg" alt="عمل 4">
+                <p>وصف العمل 4</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img5.jpg" alt="عمل 5">
+                <p>وصف العمل 5</p>
+            </div>
+             <div class="gallery-item">
+                <img src="img6.jpg" alt="عمل 6">
+                <p>وصف العمل 6</p>
+            </div>
+             <div class="gallery-item">
+                <img src="img7.jpg" alt="عمل 7">
+                <p>وصف العمل 7</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img8.jpg" alt="عمل 8">
+                <p>وصف العمل 8</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img (9).jpg" alt="عمل 1">
+                <p>وصف العمل 1</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img (10).jpg" alt="عمل 2">
+                <p>وصف العمل 2</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img (11).jpg" alt="عمل 3">
+                <p>وصف العمل 3</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img (12).jpg" alt="عمل 4">
+                <p>وصف العمل 4</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img (13).jpg" alt="عمل 5">
+                <p>وصف العمل 5</p>
+            </div>
+             <div class="gallery-item">
+                <img src="img (14).jpg" alt="عمل 6">
+                <p>وصف العمل 6</p>
+            </div>
+             <div class="gallery-item">
+                <img src="img (15).jpg" alt="عمل 7">
+                <p>وصف العمل 7</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img (16).jpg" alt="عمل 8">
+                <p>وصف العمل 8</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img (17).jpg" alt="عمل 1">
+                <p>وصف العمل 1</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img (18).jpg" alt="عمل 2">
+                <p>وصف العمل 2</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img (19).jpg" alt="عمل 3">
+                <p>وصف العمل 3</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img (20).jpg" alt="عمل 4">
+                <p>وصف العمل 4</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img (21).jpg" alt="عمل 5">
+                <p>وصف العمل 5</p>
+            </div>
+             <div class="gallery-item">
+                <img src="img (22).jpg" alt="عمل 6">
+                <p>وصف العمل 6</p>
+            </div>
+             <div class="gallery-item">
+                <img src="img (23).jpg" alt="عمل 7">
+                <p>وصف العمل 7</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img (24).jpg" alt="عمل 8">
+                <p>وصف العمل 8</p>
+            </div>
         </div>
     </section>
+
     <section id="testimonials" class="section">
         <h2>آراء العملاء</h2>
         <div class="testimonials">
@@ -347,14 +441,14 @@
     </section>
     
 <section id="contact">
-    <form action="https://formspree.io/f/mnqewylk" method="POST" style="max-width:100%;margin-bottom: 50px;">
+    <form action="https://formspree.io/f/mnqewylk" method="POST" style="max-width:600px;margin:auto;">
         <label for="name">الاسم:</label>
         <input type="text" id="name" name="name" required style="width:100%;padding:10px;margin:5px 0 15px 0;">
         <label for="email">البريد الإلكتروني:</label>
         <input type="email" id="email" name="_replyto" required style="width:100%;padding:10px;margin:5px 0 15px 0;">
         <label for="message">رسالتك:</label>
         <textarea id="message" name="message" required style="width:100%;padding:10px;margin:5px 0 15px 0;height:150px;"></textarea>
-        <button type="submit" style="width: 100%; padding:10px 20px;background-color:#375743;color:rgb(17, 14, 14);border:none;border-radius:5px;cursor: pointer;font-size: large;">إرسال</button>
+        <button type="submit" style="width: 100%; padding:10px 20px;background-color:#cff8df;color:rgb(17, 14, 14);border:none;border-radius:5px;cursor: pointer;font-size: large;">إرسال</button>
         <p style="margin-top:15px;color:green;display:none;" id="confirmation">تم إرسال رسالتك بنجاح، سنتواصل معك قريباً.</p>
     </form>
     <script>
@@ -393,10 +487,10 @@
     </div>
     <div class="footer-bottom">
         &copy;   2025 المتميز للدهانات. جميع الحقوق محفوظة. 
-        <p>المهندس. ناصر الورد 776844155</p>
+        <p>تصميم: ناصر الورد 776844155</p>
     </div>
 </footer>
-<button id="topBtn" onclick="scrollToTop()">أعلى </button>
+<button id="topBtn" onclick="scrollToTop()">⬆️</button>
 <script>
     window.onload = function() {
         setTimeout(function() {
@@ -410,6 +504,12 @@
     function scrollToTop() {
         window.scrollTo({ top: 0, behavior: "smooth" });
     }
+    const menu = document.getElementById('socialMenu');
+    const toggleBtn = document.getElementById('toggleBtn');
+
+    toggleBtn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+    });
 </script>
     <script>
         document.querySelector("form").addEventListener("submit", function(event) {
