@@ -439,23 +439,7 @@
         <p>نخدم جمبع احياء الدمام وماحولها. تواصل معنا لتحديد موعد زيارة مجانية.</p>
         <iframe src="https://www.google.com/maps?q=الدمام,+السعودية&output=embed" allowfullscreen></iframe>
     </section>
-    
-<section id="contact">
-    <script>
-        document.querySelector("form").addEventListener("submit", function(event) {
-            event.preventDefault();
-            fetch(this.action, {
-                method: this.method,
-                body: new FormData(this)
-            }).then(() => {
-                document.getElementById("confirmation").style.display = "block";
-                this.reset();
-            });
-        });
-    </script>
-</section>
 
-</div>
 <footer>
     <h3>المتميز للدهانات</h3>
     <p>نقدم خدمات الدهانات والتشطيب الداخلي والخارجي بأعلى جودة واحترافية في المنطقة الشرقية.</p>
